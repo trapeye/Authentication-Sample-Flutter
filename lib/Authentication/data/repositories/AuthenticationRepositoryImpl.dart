@@ -54,6 +54,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       final ProfileModel user = await remoteDataSource.getProfileData(params);
       _profileData = ProfileData(name: user.name, token: user.token);
       _isLoggedIn = user != null;
+      await Future.delayed(const Duration(seconds: 2), () {});
       return Right(
         user != null,
       );
@@ -65,9 +66,9 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   @override
   void logout() {
     if (isLoggedIn) {
-      throw 'Log out Failed';
-    } else {
       _isLoggedIn = false;
+    } else {
+      throw 'Log out Failed';
     }
   }
 }

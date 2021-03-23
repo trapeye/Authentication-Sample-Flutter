@@ -8,6 +8,12 @@ abstract class Failure extends Equatable {
   List<Object> get props => [properties];
 }
 
+class ValidationFailure extends Failure {
+  final String errorValidationText;
+
+  ValidationFailure(this.errorValidationText);
+}
+
 class ObjectNull extends Failure {}
 
 class ServerFailure extends Failure {}

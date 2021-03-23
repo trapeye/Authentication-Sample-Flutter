@@ -1,9 +1,10 @@
 import 'package:authentication_sample/Authentication/presentation/manager/AuthenticationProvider.dart';
 import 'package:authentication_sample/Authentication/presentation/widgets/ButtonLogin.dart';
 import 'package:authentication_sample/Authentication/presentation/widgets/TextFieldLogin.dart';
-import 'package:authentication_sample/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../../HomeScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = '/LoginScreen';
